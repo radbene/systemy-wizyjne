@@ -18,9 +18,9 @@ def create_comparison_grid(
     samples_per_class: int = 3,
 ) -> None:
     """Generuje siatkę porównawczą: oryginał vs poszczególne etapy preprocessingu."""
-    fig, axes = plt.subplots(6, 5, figsize=(15, 16))
-    stages = ["original", "denoised", "enhanced", "final"]
-    stage_titles = ["Oryginał", "Denoising", "Korekta kolorów", "Wynik końcowy"]
+    fig, axes = plt.subplots(6, 6, figsize=(18, 16))
+    stages = ["original", "denoised", "segmented", "enhanced", "final"]
+    stage_titles = ["Oryginał", "Denoising", "Segmentacja", "Korekta kolorów", "Wynik końcowy"]
 
     row = 0
     for cls in ("apples", "tomatoes"):
@@ -36,7 +36,7 @@ def create_comparison_grid(
         for idx in indices:
             path = paths_sorted[idx]
             image = cv2.imread(str(path))
-            result = preprocess_image(image)
+            result = preprocess_image(image, cls)
 
             for col, stage in enumerate(stages):
                 img = result[stage]
@@ -45,8 +45,8 @@ def create_comparison_grid(
                 if row == 0:
                     axes[row, col].set_title(stage_titles[col], fontsize=10)
 
-            axes[row, 4].axis("off")
-            axes[row, 4].text(
+            axes[row, 5].axis("off")
+            axes[row, 5].text(
                 0.1, 0.5,
                 f"{cls}\n{path.name}\n{image.shape[1]}×{image.shape[0]}",
                 va="center", fontsize=9,
