@@ -1,0 +1,39 @@
+{
+  "total_images": 391,
+  "train_apples": 164,
+  "train_tomatoes": 130,
+  "test_apples": 54,
+  "test_tomatoes": 43,
+  "by_source": {
+    "train/apples/p1": 53,
+    "train/apples/p2": 57,
+    "train/apples/p3": 54,
+    "train/tomatoes/p1": 45,
+    "train/tomatoes/p2": 29,
+    "train/tomatoes/p3": 56,
+    "test/apples/p1": 31,
+    "test/apples/p2": 10,
+    "test/apples/p3": 13,
+    "test/tomatoes/p1": 16,
+    "test/tomatoes/p2": 14,
+    "test/tomatoes/p3": 13
+  },
+  "width_range": [
+    100,
+    335
+  ],
+  "height_range": [
+    100,
+    283
+  ],
+  "unique_sizes": 92,
+  "small_images_lt_120px": 102,
+  "brightness_mean": 159.8368955626377,
+  "brightness_std": 48.757262643544685,
+  "brightness_min": 43.9521,
+  "brightness_max": 246.3941925925926,
+  "class_brightness": {
+    "apples": 172.33953546223754,
+    "tomatoes": 144.082123897246
+  }
+}
